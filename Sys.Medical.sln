@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Apresentacao", "1 - Apresentacao", "{20CD0CCF-AC31-47F0-89E0-134A022A0619}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Aplicacao", "2 - Aplicacao", "{49F05219-6915-47C4-B0CD-68540BF097A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Dominio", "3 - Dominio", "{424B4007-BC18-4EBB-A763-CB5185DF8319}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infraestrutura", "4 - Infraestrutura", "{C46E1FED-4C79-410A-BE9D-87A74BE099F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sys.Medical.Aplicacao", "2 - Aplicacao\Sys.Medical.Aplicacao\Sys.Medical.Aplicacao.csproj", "{C95A4259-F965-4832-97C4-5757CEE262F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sys.Medical.Dominio", "3 - Dominio\Sys.Medical.Dominio\Sys.Medical.Dominio.csproj", "{CCF6E0E7-DE3F-4848-9A5D-F44C1A6D32FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sys.Medical.Repositorio", "4 - Infraestrutura\Sys.Medical.Repositorio\Sys.Medical.Repositorio.csproj", "{A34A2F96-C615-479E-B228-71CDCEB6492B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sys.Medical.API", "1 - Apresentacao\Sys.Medical.API\Sys.Medical.API.csproj", "{53D44C63-E786-4227-8064-510288D9D4B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM32 = Debug|ARM32
+		Release|Any CPU = Release|Any CPU
+		Release|ARM32 = Release|ARM32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C95A4259-F965-4832-97C4-5757CEE262F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C95A4259-F965-4832-97C4-5757CEE262F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C95A4259-F965-4832-97C4-5757CEE262F5}.Debug|ARM32.ActiveCfg = Debug|ARM32
+		{C95A4259-F965-4832-97C4-5757CEE262F5}.Debug|ARM32.Build.0 = Debug|ARM32
+		{C95A4259-F965-4832-97C4-5757CEE262F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C95A4259-F965-4832-97C4-5757CEE262F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C95A4259-F965-4832-97C4-5757CEE262F5}.Release|ARM32.ActiveCfg = Release|ARM32
+		{C95A4259-F965-4832-97C4-5757CEE262F5}.Release|ARM32.Build.0 = Release|ARM32
+		{CCF6E0E7-DE3F-4848-9A5D-F44C1A6D32FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCF6E0E7-DE3F-4848-9A5D-F44C1A6D32FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCF6E0E7-DE3F-4848-9A5D-F44C1A6D32FC}.Debug|ARM32.ActiveCfg = Debug|ARM32
+		{CCF6E0E7-DE3F-4848-9A5D-F44C1A6D32FC}.Debug|ARM32.Build.0 = Debug|ARM32
+		{CCF6E0E7-DE3F-4848-9A5D-F44C1A6D32FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCF6E0E7-DE3F-4848-9A5D-F44C1A6D32FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCF6E0E7-DE3F-4848-9A5D-F44C1A6D32FC}.Release|ARM32.ActiveCfg = Release|ARM32
+		{CCF6E0E7-DE3F-4848-9A5D-F44C1A6D32FC}.Release|ARM32.Build.0 = Release|ARM32
+		{A34A2F96-C615-479E-B228-71CDCEB6492B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34A2F96-C615-479E-B228-71CDCEB6492B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34A2F96-C615-479E-B228-71CDCEB6492B}.Debug|ARM32.ActiveCfg = Debug|ARM32
+		{A34A2F96-C615-479E-B228-71CDCEB6492B}.Debug|ARM32.Build.0 = Debug|ARM32
+		{A34A2F96-C615-479E-B228-71CDCEB6492B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34A2F96-C615-479E-B228-71CDCEB6492B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34A2F96-C615-479E-B228-71CDCEB6492B}.Release|ARM32.ActiveCfg = Release|ARM32
+		{A34A2F96-C615-479E-B228-71CDCEB6492B}.Release|ARM32.Build.0 = Release|ARM32
+		{53D44C63-E786-4227-8064-510288D9D4B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53D44C63-E786-4227-8064-510288D9D4B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53D44C63-E786-4227-8064-510288D9D4B6}.Debug|ARM32.ActiveCfg = Debug|Any CPU
+		{53D44C63-E786-4227-8064-510288D9D4B6}.Debug|ARM32.Build.0 = Debug|Any CPU
+		{53D44C63-E786-4227-8064-510288D9D4B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53D44C63-E786-4227-8064-510288D9D4B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53D44C63-E786-4227-8064-510288D9D4B6}.Release|ARM32.ActiveCfg = Release|Any CPU
+		{53D44C63-E786-4227-8064-510288D9D4B6}.Release|ARM32.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C95A4259-F965-4832-97C4-5757CEE262F5} = {49F05219-6915-47C4-B0CD-68540BF097A4}
+		{CCF6E0E7-DE3F-4848-9A5D-F44C1A6D32FC} = {424B4007-BC18-4EBB-A763-CB5185DF8319}
+		{A34A2F96-C615-479E-B228-71CDCEB6492B} = {C46E1FED-4C79-410A-BE9D-87A74BE099F2}
+		{53D44C63-E786-4227-8064-510288D9D4B6} = {20CD0CCF-AC31-47F0-89E0-134A022A0619}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AACD3AF-2F80-40D3-9056-5C599550799B}
+	EndGlobalSection
+EndGlobal
