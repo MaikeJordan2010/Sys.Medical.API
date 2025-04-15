@@ -23,8 +23,4 @@
     <ProjectReference Include="..\..\3 - Dominio\Sys.Medical.Dominio\Sys.Medical.Dominio.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositorios\PacienteRepositorio\" />
-  </ItemGroup>
-
 </Project>
