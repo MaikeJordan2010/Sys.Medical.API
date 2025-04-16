@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Sys.Medical.Aplicacao._Agenda.Comandos;
+using Sys.Medical.Aplicacao._Agenda.Consultas;
 using Sys.Medical.Aplicacao._Medicos.Comandos;
 using Sys.Medical.Aplicacao._Medicos.Consultas;
 using Sys.Medical.Aplicacao._Paciente.Comandos;
@@ -26,6 +28,9 @@ namespace Sys.Medical.Aplicacao._Injecao
 
             services.AddScoped<IAgendamentoComandosRepositorio, AgendamentoComandosRepositorio>();
             services.AddScoped<IAgendamentoConsultasRepositorio, AgendamentoConsultasRepositorio>();
+
+            services.AddScoped<IAgendamentoConsultas, AgendamentoConsultas>();
+            services.AddScoped<IAgendamentoComandos, AgendamentoComandos>();
 
             services.AddScoped<IPacienteComandosRepositorio, PacienteComandosRepositorio>();
             services.AddScoped<IPacienteConsultasRepositorio, PacienteConsultasRepositorio>();

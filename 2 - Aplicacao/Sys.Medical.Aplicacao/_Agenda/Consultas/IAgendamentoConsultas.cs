@@ -1,16 +1,15 @@
 ﻿using Sys.Medical.Dominio.DTOs;
 using Sys.Medical.Dominio.ViewModel;
 
-namespace Sys.Medical.Repositorio.Repositorios.AgendamentoRepositorio.Consultas
+namespace Sys.Medical.Aplicacao._Agenda.Consultas
 {
-    public interface IAgendamentoConsultasRepositorio
+    public interface IAgendamentoConsultas
     {
         public IEnumerable<Agenda> ObterPorMedico(string codMedico);
-        public IEnumerable<Agenda> ObterPorPaciente(string codMedico);
+        public IEnumerable<Agenda> ObterPorPaciente(string codPaciente);
         public IEnumerable<Agenda> ObterLista();
         public Agenda? ObterAgenda(string codAgenda);
         public AgendaSaida? ObterAgendaSaida(string codAgenda);
-
 
     }
 }
