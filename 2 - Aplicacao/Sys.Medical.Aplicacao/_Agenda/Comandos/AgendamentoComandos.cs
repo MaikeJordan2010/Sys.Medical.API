@@ -4,11 +4,6 @@ using Sys.Medical.Dominio.DTOs;
 using Sys.Medical.Dominio.Sistemicas;
 using Sys.Medical.Repositorio.Repositorios.AgendamentoRepositorio.Comandos;
 using Sys.Medical.Repositorio.Repositorios.AgendamentoRepositorio.Consultas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sys.Medical.Aplicacao._Agenda.Comandos
 {
@@ -31,7 +26,7 @@ namespace Sys.Medical.Aplicacao._Agenda.Comandos
 
             if(agenda != null)
             {
-                agenda.TipoConsulta = (int)EnumTipoAgenda.Agendada;
+                agenda.StatusConsulta = (int)EnumTipoAgenda.Agendada;
                 _agendamentoComandosRepositorio.Inserir(agenda);
                 return ResultadoGenericoComandos.Ok();
             }
@@ -47,7 +42,7 @@ namespace Sys.Medical.Aplicacao._Agenda.Comandos
 
             if (agenda != null)
             {
-                agenda.TipoConsulta = (int)EnumTipoAgenda.Cancelada;
+                agenda.StatusConsulta = (int)EnumTipoAgenda.Cancelada;
                 _agendamentoComandosRepositorio.Inserir(agenda);
                 return ResultadoGenericoComandos.Ok();
             }
@@ -61,7 +56,7 @@ namespace Sys.Medical.Aplicacao._Agenda.Comandos
             if (validador.IsValid) 
             {
                 agenda.CodAgenda = Guid.NewGuid().ToString();
-                agenda.TipoConsulta = (int)EnumTipoAgenda.Aguardando;
+                agenda.StatusConsulta = (int)EnumTipoAgenda.Aguardando;
 
                 _agendamentoComandosRepositorio.Inserir(agenda);
 

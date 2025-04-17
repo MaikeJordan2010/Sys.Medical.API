@@ -11,7 +11,7 @@ namespace Sys.Medical.Dominio.DTOs
         public DateTime DataInicioConsulta { get; set; }
         public DateTime DataFinalConsulta { get; set; }
         public int TempoConsulta { get; set; }
-        public int TipoConsulta { get; set; }
+        public int StatusConsulta { get; set; }
 
     }
 }

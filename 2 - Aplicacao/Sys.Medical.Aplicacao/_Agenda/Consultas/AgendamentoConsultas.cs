@@ -44,7 +44,7 @@ namespace Sys.Medical.Aplicacao._Agenda.Consultas
                 return _agendamentoConsultasRepositorio.ObterPorMedico(codMedico);
             }
 
-            return Enumerable.Empty<Agenda>();
+            return [];
         }
 
         public IEnumerable<Agenda> ObterPorPaciente(string codPaciente)
@@ -54,7 +54,7 @@ namespace Sys.Medical.Aplicacao._Agenda.Consultas
                 return _agendamentoConsultasRepositorio.ObterPorPaciente(codPaciente);
             }
 
-            return Enumerable.Empty<Agenda>();
+            return [];
         }
     }
 }

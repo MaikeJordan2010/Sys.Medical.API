@@ -13,7 +13,7 @@ namespace Sys.Medical.Dominio.Medico
         public string? CPF { get; set; }
         public string? Senha { get; set; }
         public DateTime DataIns { get; set; }
-        public int? Especialidade { get; set; }
+        public int? CodEspecialidade { get; set; }
         public bool? Ativo { get; set; }
 
         public Medico()
@@ -29,7 +29,7 @@ namespace Sys.Medical.Dominio.Medico
             Senha = GerenciarSenhas.ComputeHash(usuario.Senha!);
             Email = usuario.Email;
             DataIns = DateTime.Now;
-            Especialidade = usuario?.Especialidade;
+            CodEspecialidade = usuario?.Especialidade;
             Ativo = true;
         }
     }

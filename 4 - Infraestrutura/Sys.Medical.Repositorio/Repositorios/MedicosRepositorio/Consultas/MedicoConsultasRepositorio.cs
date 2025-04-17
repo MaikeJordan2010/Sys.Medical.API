@@ -21,12 +21,12 @@ namespace Sys.Medical.Repositorio.Repositorios.MedicosRepositorio.Consultas
                 throw new Exception(ex.Message); 
             }
         }
-        public IEnumerable<Medico> ObterLista(int especialidade)
+        public IEnumerable<Medico> ObterLista(int codEspecialidade)
         {
             try
             {
                 using var conn = _dbContext.ObterConexao();
-                var resultado = conn.Query<Medico>().WHERE(x => x.Especialidade == especialidade).ExecuteQuery();
+                var resultado = conn.Query<Medico>().WHERE(x => x.CodEspecialidade == codEspecialidade).ExecuteQuery();
                 return resultado ?? [];
             }
             catch (Exception ex)
