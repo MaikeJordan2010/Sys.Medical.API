@@ -10,7 +10,7 @@ namespace Sys.Medical.Repositorio.Repositorios.AgendamentoRepositorio.Consultas
         public IEnumerable<Agenda> ObterLista();
         public Agenda? ObterAgenda(string codAgenda);
         public AgendaSaida? ObterAgendaSaida(string codAgenda);
-
+        public IEnumerable<AgendaSaida> ObterPorFiltro(FiltroAgenda filtro);
 
     }
 }

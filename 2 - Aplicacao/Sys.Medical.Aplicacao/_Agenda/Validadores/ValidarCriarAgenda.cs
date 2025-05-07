@@ -8,7 +8,6 @@ namespace Sys.Medical.Aplicacao._Agenda.Validadores
         public ValidarCriarAgenda()
         {
             RuleFor(x => x.CodMedico).NotNull().NotEmpty();
-            RuleFor(x => x.CodPaciente).NotNull().NotEmpty();
             RuleFor(x => x.DataInicioConsulta).NotNull().NotEmpty();
         }
     }

@@ -37,6 +37,11 @@ namespace Sys.Medical.Aplicacao._Agenda.Consultas
             return _agendamentoConsultasRepositorio.ObterLista();
         }
 
+        public IEnumerable<AgendaSaida> ObterPorFiltro(FiltroAgenda filtro)
+        {
+            return _agendamentoConsultasRepositorio.ObterPorFiltro(filtro);
+        }
+
         public IEnumerable<Agenda> ObterPorMedico(string codMedico)
         {
             if (!string.IsNullOrEmpty(codMedico))

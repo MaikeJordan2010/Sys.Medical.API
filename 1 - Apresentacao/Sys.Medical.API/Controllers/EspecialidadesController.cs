@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Sys.Medical.Aplicacao._Especialidades.Consultas;
 
 namespace Sys.Medical.API.Controllers
@@ -11,6 +12,7 @@ namespace Sys.Medical.API.Controllers
 
         [HttpGet]
         [Route("ObterLista")]
+        [Authorize]
         public async Task<IActionResult> ObterLista()
         {
             try

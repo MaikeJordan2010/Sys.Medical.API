@@ -2,7 +2,8 @@
 {
     public enum EnumTipoAgenda
     {
-        Aguardando,
+        SemAgenda,
+        AguardandoAprovacao,
         Agendada,
         Cancelada
     }

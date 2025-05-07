@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sys.Medical.Aplicacao._Paciente.Comandos;
 using Sys.Medical.Aplicacao._Paciente.Consultas;
@@ -21,6 +22,7 @@ namespace Sys.Medical.API.Controllers
             _consultas = consultas;
         }
 
+        [Authorize]
         [HttpPost]
         [Route("Cadastrar")]
         public async Task<IActionResult> Cadastrar(CadastroPaciente cadastroPaciente)
@@ -42,7 +44,7 @@ namespace Sys.Medical.API.Controllers
             }
         }
 
-
+        [AllowAnonymous]
         [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login(LoginUsuario login)
@@ -64,6 +66,7 @@ namespace Sys.Medical.API.Controllers
             }
         }
 
+        [Authorize]
         [HttpPut]
         [Route("Atualizar")]
         public async Task<IActionResult> Atualizar(Paciente paciente)
@@ -85,7 +88,7 @@ namespace Sys.Medical.API.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpGet("ObterPorCod/{codPaciente}")]
         public async Task<IActionResult> ObterPorCod(string codPaciente)
         {

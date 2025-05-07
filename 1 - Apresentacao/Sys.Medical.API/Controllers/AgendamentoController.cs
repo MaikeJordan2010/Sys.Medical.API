@@ -1,15 +1,18 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sys.Medical.Aplicacao._Agenda.Comandos;
 using Sys.Medical.Aplicacao._Agenda.Consultas;
 using Sys.Medical.Dominio.DTOs;
 using Sys.Medical.Dominio.Medico;
 using Sys.Medical.Dominio.Paciente;
+using Sys.Medical.Dominio.ViewModel;
 
 namespace Sys.Medical.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Authorize]
     public class AgendamentoController : ControllerBase
     {
         private readonly IAgendamentoComandos _comandos;
@@ -23,12 +26,32 @@ namespace Sys.Medical.API.Controllers
 
 
         [HttpPost]
-        [Route("Cadastrar")]
-        public async Task<IActionResult> Cadastrar(Agenda agenda)
+        [Route("CadastrarAgendaMensal")]
+        public async Task<IActionResult> CadastrarAgendaMensal(AgendaMensal
+            agenda)
         {
             try
             {
-                var resultado = await Task.Run(() => _comandos.Criar(agenda));
+                var resultado = await Task.Run(() => _comandos.CriarAgendaMensal(agenda));
+
+                if (resultado.Sucesso)
+                    return Ok(resultado);
+
+                return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        [HttpPut]
+        [Route("AgendarConsultaPaciente")]
+        public async Task<IActionResult> AgendarConsultaPaciente(AgendarConsultaPaciente agendaConsulta)
+        {
+            try
+            {
+                var resultado = await Task.Run(() => _comandos.AgendarConsultaPaciente(agendaConsulta));
 
                 if (resultado.Sucesso)
                     return Ok(resultado);
@@ -42,13 +65,13 @@ namespace Sys.Medical.API.Controllers
         }
 
 
-        [HttpPost]
-        [Route("AprovarAgenda")]
-        public async Task<IActionResult> AprovarAgenda(string codAgenda)
+        [HttpPut]
+        [Route("Atualizar")]
+        public async Task<IActionResult> Atualizar(Agenda agenda)
         {
             try
             {
-                var resultado = await Task.Run(() => _comandos.AprovarAgenda(codAgenda));
+                var resultado = await Task.Run(() => _comandos.Atualizar(agenda));
 
                 if (resultado.Sucesso)
                     return Ok(resultado);
@@ -60,27 +83,6 @@ namespace Sys.Medical.API.Controllers
                 throw new Exception(ex.Message);
             }
         }
-
-
-        [HttpPost]
-        [Route("CancelarAgenda")]
-        public async Task<IActionResult> CancelarAgenda(string codAgenda)
-        {
-            try
-            {
-                var resultado = await Task.Run(() => _comandos.CancelarAgenda(codAgenda));
-
-                if (resultado.Sucesso)
-                    return Ok(resultado);
-
-                return BadRequest();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
 
         [HttpGet]
         [Route("ObterLista")]
@@ -132,6 +134,21 @@ namespace Sys.Medical.API.Controllers
             try
             {
                 var resultado = await Task.Run(() => _consultas.ObterAgendaSaida(codAgenda));
+                return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        [HttpPost]
+        [Route("ObterPorFiltro")]
+        public async Task<IActionResult> ObterPorFiltro(FiltroAgenda filtro)
+        {
+            try
+            {
+                var resultado = await Task.Run(() => _consultas.ObterPorFiltro(filtro));
                 return Ok(resultado);
             }
             catch (Exception ex)

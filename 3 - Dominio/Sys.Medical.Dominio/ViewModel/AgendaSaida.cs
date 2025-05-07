@@ -6,6 +6,7 @@ namespace Sys.Medical.Dominio.ViewModel
     {
         public string? NomeMedico { get; set; }
         public string? NomePaciente { get; set; }
+        public string? CpfPaciente { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sys.Medical.Aplicacao._Medicos.Comandos;
 using Sys.Medical.Aplicacao._Medicos.Consultas;
@@ -20,6 +21,7 @@ namespace Sys.Medical.API.Controllers
             _medicoConsultas = medicoConsultas;
         }
 
+        [Authorize]
         [HttpPost]
         [Route("Cadastrar")]
         public async Task<IActionResult> Cadastrar(CadastroUsuario cadrastrar) 
@@ -39,6 +41,7 @@ namespace Sys.Medical.API.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login(LoginUsuario loginUsuario)
@@ -58,7 +61,7 @@ namespace Sys.Medical.API.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpGet("ObterLista")]
         public async Task<IActionResult> ObterLista()
         {
@@ -73,7 +76,7 @@ namespace Sys.Medical.API.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpGet("ObterListaPorEspecialidade/{codEspecilidade}")]
         public async Task<IActionResult> ObterLista(int codEspecilidade)
         {
