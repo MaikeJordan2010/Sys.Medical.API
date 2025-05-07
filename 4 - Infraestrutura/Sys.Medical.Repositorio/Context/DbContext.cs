@@ -16,7 +16,7 @@ namespace Sys.Medical.Repositorio.Context
         {
             try
             {
-                var sqlClient = new SqlConnection("Server=localhost\\SQLEXPRESS01;Database=FIAP_Atividade03;User Id=sa;password=123456;Encrypt=False");
+                var sqlClient = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
 
                 sqlClient.Open();
 
