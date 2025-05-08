@@ -39,6 +39,6 @@ jobs:
       uses: docker/build-push-action@v6.13.0
       with:
         context: .
-        tags: 'maikejordan2010/sys.medical.api:v1'
+        tags: 'maikejordan2010/sys.medical.api'
         push: true
           
