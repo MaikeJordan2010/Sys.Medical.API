@@ -22,7 +22,7 @@ namespace Sys.Medical.API.Controllers
             _consultas = consultas;
         }
 
-        [Authorize]
+        [AllowAnonymous]
         [HttpPost]
         [Route("Cadastrar")]
         public async Task<IActionResult> Cadastrar(CadastroPaciente cadastroPaciente)

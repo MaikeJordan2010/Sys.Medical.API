@@ -1,7 +1,9 @@
-﻿using Sys.Medical.Dominio.Sistemicas;
+﻿using JORM.Models.DataAnotations;
+using Sys.Medical.Dominio.Sistemicas;
 
 namespace Sys.Medical.Dominio.Paciente
 {
+    [TableName("TabPacientes")]
     public class Paciente
     {
         public string? CodPaciente { get; set; }
@@ -11,7 +13,7 @@ namespace Sys.Medical.Dominio.Paciente
         public bool? Ativo { get; set; }
         public string? Senha { get; set; }
         public DateTime? DataIns { get; set; }
-
+        public string? Token { get; set; }
         public Paciente()
         {
             
@@ -23,6 +25,7 @@ namespace Sys.Medical.Dominio.Paciente
             this.NomePaciente = cadastroPaciente.NomePaciente;
             this.CPF = cadastroPaciente.CPF;
             this.Senha = GerenciarSenhas.ComputeHash(cadastroPaciente.Senha!);
+            this.Email = cadastroPaciente?.Email;
             this.Ativo = true;
             this.DataIns = DateTime.Now;    
             

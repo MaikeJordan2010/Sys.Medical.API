@@ -14,10 +14,10 @@ namespace Sys.Medical.Repositorio.Repositorios.PacienteRepositorio.Consultas
             return resultado ?? default;
         }
 
-        public Paciente? ObterPorEmailOuCPF(string codPaciente)
+        public Paciente? ObterPorEmailOuCPF(string usuario)
         {
             using var conn = _dbContext.ObterConexao();
-            var resultado = conn.Query<Paciente>().WHERE(x => x.CodPaciente == codPaciente).ExecuteQuery().FirstOrDefault();
+            var resultado = conn.Query<Paciente>().WHERE(x => x.CPF == usuario || x.Email == usuario).ExecuteQuery().FirstOrDefault();
             return resultado ?? default;
         }
     }

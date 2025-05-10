@@ -67,12 +67,13 @@ namespace Sys.Medical.Aplicacao._Paciente.Comandos
                     if (paciente == null)
                         return ResultadoGenericoComandos.ErroLogin();
 
-                    var senhaHash = GerenciarSenhas.ComputeHash(paciente.Senha!);
+                    var senhaHash = GerenciarSenhas.ComputeHash(usuario.Senha!);
 
                     if (senhaHash != paciente?.Senha)
                         return ResultadoGenericoComandos.ErroLogin();
 
                     paciente.Senha = null;
+                    paciente.Token = TokenKey.GetToken(paciente.NomePaciente!, paciente!.CodPaciente!, paciente.Email!, EnumTipoAcesso.PACIENTE);
 
                     return ResultadoGenericoComandos.Ok(paciente);
 
