@@ -68,8 +68,9 @@ namespace Sys.Medical.Aplicacao._Agenda.Comandos
                 {
                     if (agendaMensal!.DiaValido(dataInicial))
                     {
-                        if(agendaMensal.DesconsiderarFeriados == false || VerificaFeriados.IsFeriado(dataInicial) == false)
+                        if(agendaMensal.DesconsiderarFeriados == true || VerificaFeriados.IsFeriado(dataInicial) == false)
                         {
+
                             TimeOnly horaInicio = new TimeOnly(Convert.ToInt32(agendaMensal?.HoraInicioTurno?.Split(":")[0]), Convert.ToInt32(agendaMensal?.HoraInicioTurno?.Split(":")[1]));
                             TimeOnly horaFim = new TimeOnly(Convert.ToInt32(agendaMensal?.HoraFimTurno?.Split(":")[0]), Convert.ToInt32(agendaMensal?.HoraFimTurno?.Split(":")[1]));
 

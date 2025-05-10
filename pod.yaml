@@ -1,0 +1,15 @@
+apiVersion: v1
+kind : Pod
+metadata:
+  name: sysmedical
+  labels:
+    app: sysmedical
+spec:
+  containers:
+  - name: sysmedical
+    image: maikejordan2010/sys.medical.api:v1
+    env:
+      - name: CONNECTION_STRING
+        value: Server=host.docker.internal,52291;Database=FIAP_Atividade03;User Id=sa;password=123456;Encrypt=False
+    ports:
+      - containerPort: 8282

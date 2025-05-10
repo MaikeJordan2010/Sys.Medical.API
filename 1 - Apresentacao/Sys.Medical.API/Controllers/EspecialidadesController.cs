@@ -12,7 +12,7 @@ namespace Sys.Medical.API.Controllers
 
         [HttpGet]
         [Route("ObterLista")]
-        [Authorize]
+        [AllowAnonymous]
         public async Task<IActionResult> ObterLista()
         {
             try

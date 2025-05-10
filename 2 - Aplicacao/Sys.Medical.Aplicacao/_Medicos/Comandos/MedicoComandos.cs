@@ -59,9 +59,9 @@ namespace Sys.Medical.Aplicacao._Medicos.Comandos
                         return ResultadoGenericoComandos.ErroLogin();
 
                     medico.Senha = null;
-                    string? token = TokenKey.GetToken(medico.NomeMedico!, medico.CodMedico!, medico.Email!, EnumTipoAcesso.MEDICO);
+                    medico.Token = TokenKey.GetToken(medico.NomeMedico!, medico.CodMedico!, medico.Email!, EnumTipoAcesso.MEDICO);
 
-                    return ResultadoGenericoComandos.Ok(new { medico = medico, token = token });
+                    return ResultadoGenericoComandos.Ok(medico);
                     
                 }
                 return ResultadoGenericoComandos.Erro(validador.Errors);

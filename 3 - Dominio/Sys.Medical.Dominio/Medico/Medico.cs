@@ -15,6 +15,7 @@ namespace Sys.Medical.Dominio.Medico
         public DateTime DataIns { get; set; }
         public int? CodEspecialidade { get; set; }
         public bool? Ativo { get; set; }
+        public string? Token { get; set; }
 
         public Medico()
         {

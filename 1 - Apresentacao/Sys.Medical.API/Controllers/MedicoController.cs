@@ -21,7 +21,7 @@ namespace Sys.Medical.API.Controllers
             _medicoConsultas = medicoConsultas;
         }
 
-        [Authorize]
+        [AllowAnonymous]
         [HttpPost]
         [Route("Cadastrar")]
         public async Task<IActionResult> Cadastrar(CadastroUsuario cadrastrar) 
