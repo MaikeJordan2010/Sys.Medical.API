@@ -53,7 +53,7 @@ namespace Sys.Medical.API.Controllers
                 if (resultado.Sucesso)
                     return Ok(resultado);
 
-                return BadRequest();
+                return Unauthorized();
             }
             catch (Exception ex)
             {
